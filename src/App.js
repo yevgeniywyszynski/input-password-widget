@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import PasswordWidget from "./components/PasswordWidget/PasswordWidget";
+
+let config = {
+  smallLetter: true,
+  capitalLetter: false,
+  specialDigit: true,
+  number: false,
+  length: 10,
+  customHander: {
+    description: "not Contains 'kuba'",
+    checkFunction: (e) => {
+      return !e.includes("kuba");
+    },
+  },
+};
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <PasswordWidget config={config} />;
 }
 
 export default App;
