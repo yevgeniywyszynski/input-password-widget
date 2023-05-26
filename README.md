@@ -1,7 +1,7 @@
 ## Input-password-widget
 
-<img src="client/public/img/widget.png"/>
-<img src="client/public/img/widget2.png"/>
+<img src="public/img/widget.png"/>
+<img src="public/img/widget2.png"/>
 
 <div>The input password widget component is a highly secure and user-friendly component designed for capturing and validating password inputs in web applications. It provides an intuitive and visually pleasing interface for users to enter their passwords while ensuring that the password remains confidential and protected from unauthorized access.
 
