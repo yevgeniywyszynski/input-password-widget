@@ -1,7 +1,8 @@
 {
   "name": "input-password-widget",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "main": "./src/components/passwordWidget/PasswordWidget.jsx",
+  "repository": "https://github.com/yevgeniywyszynski/input-password-widget",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

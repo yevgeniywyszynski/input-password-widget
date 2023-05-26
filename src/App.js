@@ -3,16 +3,16 @@ import PasswordWidget from "./components/PasswordWidget/PasswordWidget";
 
 let config = {
   smallLetter: true,
-  capitalLetter: false,
+  capitalLetter: true,
   specialDigit: true,
-  number: false,
-  length: 10,
-  customHander: {
-    description: "not Contains 'kuba'",
-    checkFunction: (e) => {
-      return !e.includes("kuba");
-    },
-  },
+  number: true,
+  length: 8,
+  // customHander: {
+  //   description: "not Contains 'kuba'",
+  //   checkFunction: (e) => {
+  //     return !e.includes("kuba");
+  //   },
+  // },
 };
 
 function App() {
