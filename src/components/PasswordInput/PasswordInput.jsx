@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./PasswordInput.module.scss";
 import PasswordValidator from "../PasswordValidator/PasswordValidator";
 
-export default function PasswordInput({ config }) {
+export default function PasswordInput({
+  config,
+  setPasswords,
+  setUserLogin,
+  setPasswordValidHandler,
+  handleRegister,
+}) {
   const [passwordShown, setPasswordShown] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,6 +34,31 @@ export default function PasswordInput({ config }) {
     }
     setPassword(passRandom);
   };
+
+  const registerUser = (e) => {
+    e.preventDefault();
+
+    if (isPasswordValid) {
+      const newUserValue = {
+        email: email,
+        password: password,
+      };
+
+      handleRegister(newUserValue);
+    }
+  };
+
+  useEffect(() => {
+    setPasswords(password);
+  }, [password]);
+
+  useEffect(() => {
+    setUserLogin(email);
+  }, [email]);
+
+  useEffect(() => {
+    setPasswordValidHandler(isPasswordValid);
+  }, [isPasswordValid]);
 
   return (
     <div className={styles.passwordInputContainer}>
@@ -68,7 +99,12 @@ export default function PasswordInput({ config }) {
             setIsPasswordValid={setIsPasswordValid}
           />
           <div className={styles.passwordInputBtnWrapper}>
-            <button className={styles.passwordInputLoginBtn}>Register</button>
+            <button
+              className={styles.passwordInputLoginBtn}
+              onClick={(e) => registerUser(e)}
+            >
+              Register
+            </button>
             <button
               onClick={(e) => handleRandom(e)}
               className={styles.passwordInputLoginRandom}

@@ -28,6 +28,8 @@ export default function PasswordValidator({
       isCustomHander
     ) {
       setIsPasswordValid(true);
+    } else {
+      setIsPasswordValid(false);
     }
   }, [
     passLength,
